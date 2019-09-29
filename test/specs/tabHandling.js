@@ -10,7 +10,7 @@ describe('API command', function(){
         $(EDIT_BTN).click();
 
         //Get all TabIds
-        let tabIds = browser.getWindowHandle()[1];
+        let tabIds = browser.getWindowHandles();
         console.log('=============> Tab Ids: ', tabIds);
         //Get Page Title 1
         let pageTitle1 = browser.getTitle();
@@ -18,7 +18,7 @@ describe('API command', function(){
         //console.log('===============?>', tabIds);
 
         //Switch to new tab
-        browser.switchToWindow(tabIds);
+        browser.switchToWindow(tabIds[1]);
 
         //Get page title 2
         let pageTitle2 = browser.getTitle();
