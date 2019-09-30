@@ -10,10 +10,6 @@ describe('Page Object Action Chains', function () {
     })
 
     it('Verify Page Title Is Correct', function () {
-        let actualResult = LoginPage.getPageTitle();
-        let expectResult = 'Login Page@';
-
-        expect(actualResult).to.equal(expectResult, '==?> ERR: Wrong text');
-
+        LoginPage.verifyLoginTitle();
     })
 })

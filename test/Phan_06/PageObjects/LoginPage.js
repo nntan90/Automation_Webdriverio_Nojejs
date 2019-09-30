@@ -1,3 +1,4 @@
+let expect = require('chai').expect;
 let SecureAreaPage = require('./SecureAreaPage.js');
 let Base = require('./Base.js')
 
@@ -25,6 +26,12 @@ class LoginPage extends Base {
     clickOnLoginBtn(){
         $(LOGIN_BTN).click();
         return SecureAreaPage;
+    }
+
+    verifyLoginTitle(){
+        let actualLoginTitle = this.getPageTitle();
+        let expectLoginTitle = 'Login Page';
+        expect(actualLoginTitle).to.equal(expectLoginTitle, '=====> ERR: Login Title is incorrect');
     }
 
 }
